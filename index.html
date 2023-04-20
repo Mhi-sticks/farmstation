@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/farm.css" />
+
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="css/mobile.css"
+    />
+    <title>FARM STATION</title>
+    <script
+      src="https://kit.fontawesome.com/e5e7a6623b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+        
+      <nav id="navbar">
+        <div class="container">
+            <div id="navbar-content">
+          <div class="logo">
+            <img src="./images/farmlogo.png" alt="Farm station" />
+          </div>
+          <div class="links">
+            <ul>
+              <li><a class="current" href="index.html">Home</a></li>
+              <li><a href="product.html">Products</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li class="btn"><a href="login.html">Login</a></li>
+              <li class="btn"><a href="signup.html">SignUp</a></li>
+            </ul>
+        </div>
+          </div>
+        </div>
+      </nav>
+      <div id="showcase">
+        <div class="container">
+          <div class="showcase-content">
+            <h1><span class="text-primary">Keep</span> Growing</h1>
+            <p class="lead">
+              Introducing you to the Farmer's Market
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <main>
+        <div class="container">
+            <Form onSubmit={submitHandler}>
+                      <input
+                        type="search"
+                      ></input>
+                      <Button type="submit" className="btn btn-primary p-1.5 ng">
+                        Search
+                      </Button>
+                    </div>
+        </div>
+    </main>
+    
+    
+    <div className="container my-5 py-3">
+      <div class="row">
+        <div class="col-md-6 d-flex justify-content-center mx-auto product">
+          <img
+            src="images/farm7.jpg"
+            alt=grass
+            height="350px"
+            width="400px"
+          />
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <h1 class="display-5 fw-bold">grass</h1>
+          <hr />
+          <h2 class="my-4">$500</h2>
+          <p class="lead">grass</p>
+          <button class="btn btn-outline-primary my-5">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!------------------------ footer ------------------------------>
+    <footer>
+
+        <div class="foot">
+          <div class="container">
+            <div class="flex-foot">
+          <div class="col-foot">
+            <div class="foot-widget">
+<div class="logo-foot"> 
+<a href="index.html">
+            <img src="./images/farmlogo.png" alt="">
+          </a>
+        </div>
+          <p>FarmStation is a team of professionals and an online platform for generating income from selling farm produce to consumers</p>
+          
+       
+          </div>
+        </div>
+          <div class=" col-foot1">
+            <div class="foot-widget">
+<h3>Company</h3>
+<ul class="service-list">
+<li><a href="home.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="rate.html">Rate Us</a></li>
+<li><a href="plan.html">Plan</a></li>
+<li><a href="news.html">Latest News</a></li>
+</ul>
+</div>
+          </div>
+          <div class=" col-foot1">
+            <div class="foot-widget">
+            <h3>Support</h3>
+            <ul class="support-list">
+              <li><a href="">FAQ'</a></li>
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href="">Terms & Condition</a></li>
+              <li><a href="">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+          <div class="col-foot">
+            <div class="foot-widget">
+            <h3>Contact Info</h3>
+            <ul class="contact-foot">
+              <li>Location: <a href=""> 9th floor Surulere, Lagos. Nigeria</a></li>
+              <li>Email: <a href=""> admin@farmstation.com</a></li>
+              <li>Phone: <a href=""> +coming soon</a></li>
+              
+            </ul>
+          </div>
+
+          </div>
+        </div>
+        <div class="copyright-foot">
+        <p>Copyright &copy2023 FarmStation. All rights reserved</p>
+      </div>
+      </div>
+      </footer>
+  </body>
+</html>
