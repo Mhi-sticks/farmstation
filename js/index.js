@@ -1,16 +1,171 @@
-
 // products
 const product = [
   {
     id: 0,
-    image: "images/farm9.jpg",
-    title: "pen",
+    image: "images/beet.png",
+    title: "Beet",
     price: 349.0,
   },
   {
     id: 1,
-    image: "images/farm9.jpg",
-    title: "farm",
+    image: "images/broccoli.png",
+    title: "Broccoli",
+    price: 349.0,
+  },
+  {
+    id: 2,
+    image: "images/cabbage.png",
+    title: "Cabbage",
+    price: 349.0,
+  },
+  {
+    id: 3,
+    image: "images/carrot.png",
+    title: "Carrot",
+    price: 349.0,
+  },
+  {
+    id: 4,
+    image: "images/cock.png",
+    title: "Cock",
+    price: 349.0,
+  },
+  {
+    id: 5,
+    image: "images/corn.png",
+    title: "Corn",
+    price: 349.0,
+  },
+  {
+    id: 6,
+    image: "images/cow.png",
+    title: "Cow",
+    price: 349.0,
+  },
+  {
+    id: 7,
+    image: "images/cucumber.png",
+    title: "Cucumber",
+    price: 349.0,
+  },
+  {
+    id: 8,
+    image: "images/dog_food.png",
+    title: "Dog Food",
+    price: 349.0,
+  },
+  {
+    id: 9,
+    image: "images/cowboy_hat.png",
+    title: "Cowboy Hat",
+    price: 349.0,
+  },
+  {
+    id: 10,
+    image: "images/dog.png",
+    title: "Dogs",
+    price: 349.0,
+  },
+  {
+    id: 11,
+    image: "images/egg.png",
+    title: "Eggs",
+    price: 349.0,
+  },
+  {
+    id: 12,
+    image: "images/fish.png",
+    title: "Fish",
+    price: 349.0,
+  },
+  {
+    id: 13,
+    image: "images/garlic.png",
+    title: "Garlic",
+    price: 349.0,
+  },
+  {
+    id: 14,
+    image: "images/german_shepherd.png",
+    title: "German Shepherd",
+    price: 349.0,
+  },
+  {
+    id: 15,
+    image: "images/ginger.png",
+    title: "Ginger",
+    price: 349.0,
+  },
+  {
+    id: 16,
+    image: "images/mushroom.png",
+    title: "Mushroom",
+    price: 349.0,
+  },
+  {
+    id: 17,
+    image: "images/onion.png",
+    title: "Onion",
+    price: 349.0,
+  },
+  {
+    id: 18,
+    image: "images/palm_tree.png",
+    title: "Palm Tree",
+    price: 349.0,
+  },
+  {
+    id: 19,
+    image: "images/pepper.jpg",
+    title: "Pepper",
+    price: 349.0,
+  },
+  {
+    id: 20,
+    image: "images/pig.png",
+    title: "Pig",
+    price: 349.0,
+  },
+  {
+    id: 21,
+    image: "images/shotgun.png",
+    title: "Shot Gun",
+    price: 349.0,
+  },
+  {
+    id: 22,
+    image: "images/shrimps.png",
+    title: "Shrimps",
+    price: 349.0,
+  },
+  {
+    id: 23,
+    image: "images/tomatoes.png",
+    title: "Tomatoes",
+    price: 349.0,
+  },
+  {
+    id: 24,
+    image: "images/turkey.png",
+    title: "Turkey",
+    price: 349.0,
+  },
+  {
+    id: 25,
+    image: "images/wheat.png",
+    title: "Wheat",
+    price: 349.0,
+  },
+  {
+    id: 26,
+    image: "images/mushroom.png",
+    title: "Mushroom",
+    price: 349.0,
+  },
+  {
+    id: 27,
+    image: "images/carrot.png",
+    title: "Carrot",
     price: 349.0,
   },
 ];
@@ -35,7 +190,7 @@ const displayItem = (items) => {
   document.getElementById("box-5").innerHTML = items
     .map((item) => {
       let { image, title, price } = item;
-      return `<div class="card-5">
+      return `<div class="card-5 itemcent">
               <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
               <div class="img-box">
                 <img src=${image} class="img-responsive img-fluid" alt="">									
