@@ -42,7 +42,7 @@ cNumber.addEventListener("keyup", function (e) {
 
   let newValue = "";
   num = num.replace(/\s/g, "");
-  for (var i = 0; i < num.length; i++) {
+  for (let i = 0; i < num.length; i++) {
     if (i % 4 == 0 && i > 0) newValue.concat(" ");
     newValue = newValue.concat(num[i]);
     cNumber.value = newValue;
@@ -61,9 +61,9 @@ eDate.addEventListener("keyup", function (e) {
   let newInput = eDate.value;
 
   if (e.which !== 8) {
-    var numChars = e.target.value.length;
+    let numChars = e.target.value.length;
     if (numChars == 2) {
-      var thisVal = e.target.value;
+      let thisVal = e.target.value;
       thisVal += "/";
       e.target.value = thisVal;
       console.log(thisVal.length);
