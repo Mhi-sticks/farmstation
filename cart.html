@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Inter:wght@100;200;300;400;500;531;600;700;800;900&family=Lobster&family=Montserrat:wght@1,500;600;700&family=Oxygen:wght@300;400;700&family=Raleway:ital,wght@0,100;0,500;1,400;1,500&family=Roboto:ital,wght@0,400;1,700;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/farm.css" />
+
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="css/mobile.css"
+    />
+    <title>FARM STATION</title>
+    <script
+      src="https://kit.fontawesome.com/e5e7a6623b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+        
+      <nav id="navbar">
+        <div class="container">
+            <div id="navbar-content">
+          <div class="logo">
+            <img src="./images/farmlogo.png" alt="Farm station" />
+          </div>
+          <div class="links">
+            <ul>
+              <li><a  href="index.html">Home</a></li>
+              <li><a href="product.html">Products</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li class="btn"><a href="login.html">Login</a></li>
+              <li class="btn"><a href="signup.html">SignUp</a></li>
+              <li class="cart"><a class="current" href="cart.html"><i class="fa-solid fa-cart-shopping"></i><p id="count">(0)</p></a></li>
+            </ul>
+        </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+    <section id="root" class="pt-5 mt-5 container">
+        <div class="root"></div>
+        <div class="sidebar">
+        <div class="head"><h2 class="font-weight-bold pt-5">My Cart</h2></div>
+        <div class="cartitem">Your cart is empty</div>
+        <div class="footcart">
+            <h3>Total</h3>
+            <h2 class="totalcart">$0.00</h2>
+        </div>
+        </div>
+    </section>
+
+    <section id="cart-container" class="container my-5"> 
+        <table>
+<thead>
+    <tr>
+        <td>Remove</td>
+        <td>Images</td>
+        <td>Product</td>
+        <td>Price</td>
+        <td>Quantity</td>
+        <td>Total</td>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td><a href="#"><i class="fas fa-trash-alt"></i></a></td>
+        <td><img src="images/beet2.png" alt=""></td>
+        <td><h5>Beetroot</h5></td>
+        <td><h5>$345</h5></td>
+        <td><input type="number" class="w-25 pl-1" value="1"></td>
+        <td><h5>$780.00</h5></td>
+    </tr>
+    <tr>
+        <td><a href="#"><i class="fas fa-trash-alt"></i></a></td>
+        <td><img src="images/dog_PNG50412.png" alt=""></td>
+        <td><h5>Beetroot</h5></td>
+        <td><h5>$345</h5></td>
+        <td><input type="number" class="w-25 pl-1" value="1"></td>
+        <td><h5>$780.00</h5></td>
+    </tr>
+    <tr>
+        <td><a href="#"><i class="fas fa-trash-alt"></i></a></td>
+        <td><img src="images/cowboy_hat_PNG94.png" alt=""></td>
+        <td><h5>Beetroot</h5></td>
+        <td><h5>$345</h5></td>
+        <td><input type="number" class="w-25 pl-1" value="1"></td>
+        <td><h5>$780.00</h5></td>
+    </tr>
+</tbody>
+        </table>
+    </section>
+    
+    <section id="cart-bottom" class="container">
+        <div class="row">
+            <div class="coupon col-lg-6 col-md-6 col-12 mb-4">
+                <div>
+                    <h4>COUPON</h4>
+                    <p>Enter your Coupon code if you have one.</p>
+                    <div >
+                        <input type="text" name="" id=""placeholder="Enter coupon code">
+                        <button class="cartbtn">
+                            <a  href="checkout.html">Apply</a>
+                        </button>
+                        </div>
+            </div>
+            <div class="total col-lg-6 col-md-6 col-12 mb-4">
+                <div>
+                    <h4>CART TOTAL</h4>
+                    <div class="d-flex justify-content-between">
+                        <h3>Subtotal</h3>
+                        <p>$215.00</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <h3>Shipping</h3>
+                        <p>$255.00</p>
+                    </div>
+                    
+                    <div class=" justify-content-between r-bb">
+                        <h3>Total</h3>
+                        <p>$215.00</p>
+                        
+                    </div>
+                    <button>
+                    <button class="cartbtn-f">
+                        <a  href="checkout.html">Chekout</a>
+                    </button>
+                    
+            </div>
+                </div>
+        </div>
+        </div>
+    </section>
+    
+
+    <!------------------------ footer ------------------------------>
+    <footer>
+
+        <div class="foot">
+          <div class="container">
+            <div class="flex-foot">
+          <div class="col-foot">
+            <div class="foot-widget">
+<div class="logo-foot"> 
+<a href="index.html">
+            <img src="./images/farmlogo.png" alt="">
+          </a>
+        </div>
+          <p>FarmStation is a team of professionals and an online platform for generating income from selling farm produce to consumers</p>
+          
+       
+          </div>
+        </div>
+          <div class=" col-foot1">
+            <div class="foot-widget">
+<h3>Company</h3>
+<ul class="service-list">
+<li><a href="home.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="rate.html">Rate Us</a></li>
+<li><a href="plan.html">Plan</a></li>
+<li><a href="news.html">Latest News</a></li>
+</ul>
+</div>
+          </div>
+          <div class=" col-foot1">
+            <div class="foot-widget">
+            <h3>Support</h3>
+            <ul class="support-list">
+              <li><a href="">FAQ'</a></li>
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href="">Terms & Condition</a></li>
+              <li><a href="">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+          <div class="col-foot">
+            <div class="foot-widget">
+            <h3>Contact Info</h3>
+            <ul class="contact-foot">
+              <li>Location: <a href=""> 9th floor Surulere, Lagos. Nigeria</a></li>
+              <li>Email: <a href=""> admin@farmstation.com</a></li>
+              <li>Phone: <a href=""> +coming soon</a></li>
+              
+            </ul>
+          </div>
+
+          </div>
+        </div>
+        <div class="copyright-foot">
+        <p>Copyright &copy2023 FarmStation. All rights reserved</p>
+      </div>
+      </div>
+      </footer>
+
+
+       <!-- Optional JavaScript -->
+          <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/index.js"></script>
+      
+  </body>
+</html>
