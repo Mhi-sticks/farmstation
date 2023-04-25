@@ -1,0 +1,27 @@
+{
+  "name": "farmstation",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "env-cmd -f ./config/dev.env nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bcrypt": "*",
+    "express": "^4.18.2",
+    "flutterwave-node-v3": "^1.1.5",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.10.5",
+    "validator": "^13.9.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.22"
+  },
+  "keywords": [],
+  "description": ""
+}
