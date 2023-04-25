@@ -31,7 +31,7 @@ document.getElementById("search").addEventListener("keyup", (e) => {
 const displayItem = (items) => {
   document.getElementById("box-5").innerHTML = items
     .map((item) => {
-      var { image, title, price } = item;
+      let { image, title, price } = item;
       return `<div class="card-5">
             <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
             <div class="img-box">
