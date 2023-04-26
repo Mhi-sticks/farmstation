@@ -18,14 +18,14 @@ router.get('/', async (req,res) => {
 })
 
 router.post('/signup', async (req, res) => {
-    if (!username || !email || !password) {
-        throw new Error('Missing required fields');
-      }
-      const user = new User(req.body);
-      try {
-        await user.save();
-        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
-        res.json({ user, token });
+    // if (!username || !email || !password) {
+    //     throw new Error('Missing required fields');
+    //   }
+    const user = new User(req.body);
+    try {
+      await user.save();
+      const token = await user.generateAuthToken();
+      res.json({ user, token });
     } catch (error) {
         console.error(error);
         res.status(500).send('Error signing up');
@@ -42,7 +42,7 @@ router.post('/login', async (req, res) => {
     const passwordValid = await bcrypt.compare(password, user.password);
     if (!passwordValid) throw new Error('Invalid password');
 
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET);
+    const token = await user.generateAuthToken()
     res.json({ user, token });
   } catch (error) {
     console.error(error);
@@ -52,11 +52,11 @@ router.post('/login', async (req, res) => {
 
 router.post('/logout', Auth, async (req, res) => {
   try {
-    req.user.tokens = req.user.tokens.filter((oken) => {
+    req.user.tokens = req.user.tokens.filter((token) => {
       return token.token !== req.token;
     });
     await req.user.save();
-    res.send();
+    res.send("Logged out");
   } catch (err) {
     res.status(500).send();
   }

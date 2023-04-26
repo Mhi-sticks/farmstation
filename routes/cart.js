@@ -89,7 +89,7 @@ router.delete('/cart/', Auth, async (req, res) => {
             cart = await cart.save();
             res.status(200).send(cart);
         } else {
-            res.status(404).send('item not found');
+            res.status(404).send(`item not found ${itemId} ${owner}`);
         }
     } catch (err) {
         console.log(`Unable to create Cart...\nError${err}`);

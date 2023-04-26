@@ -4,6 +4,19 @@ const Auth = require("../middleware/auth");
 
 const router = new express.Router();
 
+// get an item from the database
+router.get("/items:id", async (req, res) => {
+  try {
+    const item = await Item.findOne({ _id: req.params.id });
+    if (!item) {
+      res.status(404).send({ error: "Item not found" });
+    }
+    res.status(200).json(item);
+  } catch (err) {
+    res.status(400).send(err);
+  }
+});
+
 // create new Item
 router.post("/items", Auth, async (req, res) => {
   try {
@@ -12,22 +25,9 @@ router.post("/items", Auth, async (req, res) => {
       owner: req.user._id,
     });
     await newItem.save();
-    res.status(201).send(newItem);
+    res.status(201).json(newItem);
   } catch (err) {
     res.status(400).send({ message: "error" });
-  }
-});
-
-// get an item from the database
-router.get("/items:id", async (req, res) => {
-  try {
-    const item = await Item.findOne({ _id: req.params.id });
-    if (!item) {
-      res.status(404).send({ error: "Item not found" });
-    }
-    res.status(200).send(item);
-  } catch (err) {
-    res.status(400).send(err);
   }
 });
 
@@ -43,7 +43,7 @@ router.get("/items", Auth, async (req, res) => {
 
 // allow product owners to be able to edit their product
 router.patch("/items/:id", Auth, async (req, res) => {
-  const updateData = Object.Keys(req.body);
+  const updateData = Object.keys(req.body);
   const allowedUpdates = ["name", "description", "category", "price"];
   const isValidOperation = updateData.every((data) =>
     allowedUpdates.includes(data)
