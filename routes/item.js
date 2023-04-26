@@ -1,11 +1,11 @@
 const express = require("express");
 const Item = require("../models/item");
-// const Auth = null;
+const Auth = require("../middleware/auth");
 
 const router = new express.Router();
 
 // create new Item
-router.post("/items", async (req, res) => {
+router.post("/items", Auth, async (req, res) => {
   try {
     const newItem = new Item({
       ...req.body,
@@ -32,7 +32,7 @@ router.get("/items:id", async (req, res) => {
 });
 
 // fetch all items will be used for the home page
-router.get("/items", async (req, res) => {
+router.get("/items", Auth, async (req, res) => {
   try {
     const items = await Item.find({});
     res.status(200).send(items);
@@ -42,7 +42,7 @@ router.get("/items", async (req, res) => {
 });
 
 // allow product owners to be able to edit their product
-router.patch("/items/:id", async (req, res) => {
+router.patch("/items/:id", Auth, async (req, res) => {
   const updateData = Object.Keys(req.body);
   const allowedUpdates = ["name", "description", "category", "price"];
   const isValidOperation = updateData.every((data) =>
@@ -65,7 +65,7 @@ router.patch("/items/:id", async (req, res) => {
 });
 
 // will be called for deleting Item by User
-router.delete("/items/:id", async (req, res) => {
+router.delete("/items/:id", Auth, async (req, res) => {
   try {
     const deletedItem = await Item.findOneAndDelete({ _id: req.params.id });
     if (!deletedItem) {

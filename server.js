@@ -1,7 +1,7 @@
 const express = require("express");
 const itemRouter = require("./routes/item");
 const cartRouter = require("./routes/cart");
-const authRoutes = require("./routes/auth");
+const authRoutes = require("./routes/user");
 require("./db/mongoose");
 
 const app = express();
