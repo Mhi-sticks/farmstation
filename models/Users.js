@@ -4,9 +4,9 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
-  firstName: { type: String, required: true, trim: true },
-  surname: { type: String, required: true, trim: true },
-  otherNames: { type: String, required: false, trim: true },
+  // firstName: { type: String, required: true, trim: true },
+  // surname: { type: String, required: true, trim: true },
+  // otherNames: { type: String, required: false, trim: true },
   username: { type: String, required: true, trim: true },
   email: { type: String, required: true,
     validate(val) {
@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
     }
   },
   password: { type: String, required: true, minLength: 7, trim: true },
-  phoneNumber: { type: String, required: true },
+  // phoneNumber: { type: String, required: true },
   tokens: [{
     token: {
       type: String,
@@ -40,6 +40,12 @@ userSchema.statics.findByCredentials = async (email, password) => {
   console.log(verified);
 
   if (!verified) throw new Error('Incorrect password');
+  return user;
+}
+
+userSchema.statics.confirmUserExists = async (email) => {
+  const user = await User.findOne({ email });
+  if (user) throw new Error('User aldready exists');
   return user;
 }
 
