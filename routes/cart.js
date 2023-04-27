@@ -1,12 +1,12 @@
 const express = require('express');
 const Cart = require('../models/cart');
 const Item = require('../models/item');
-// const Auth = require('../models/auth');
+const Auth = require("../middleware/auth");
 
 const router = new express.Router();
 
 // get things in cart
-router.get('/cart', async (req, res) => {
+router.get('/cart', Auth, async (req, res) => {
     const owner = req.user._id;
 
     try {
@@ -22,7 +22,7 @@ router.get('/cart', async (req, res) => {
 });
 
 // create a cart
-router.post('/cart', async (req, res) => {
+router.post('/cart', Auth, async (req, res) => {
     const owner = req.user._id;
     const { itemId, quantity } = req.body;
 
@@ -71,7 +71,7 @@ router.post('/cart', async (req, res) => {
 });
 
 // for deleting items in cart
-router.delete('/cart/', async (req, res) => {
+router.delete('/cart/', Auth, async (req, res) => {
     const owner = req.user._id;
     const itemId =  req.query.itemId;
 
@@ -89,7 +89,7 @@ router.delete('/cart/', async (req, res) => {
             cart = await cart.save();
             res.status(200).send(cart);
         } else {
-            res.status(404).send('item not found');
+            res.status(404).send(`item not found ${itemId} ${owner}`);
         }
     } catch (err) {
         console.log(`Unable to create Cart...\nError${err}`);

@@ -1,22 +1,8 @@
 const express = require("express");
 const Item = require("../models/item");
-// const Auth = null;
+const Auth = require("../middleware/auth");
 
 const router = new express.Router();
-
-// create new Item
-router.post("/items", async (req, res) => {
-  try {
-    const newItem = new Item({
-      ...req.body,
-      owner: req.user._id,
-    });
-    await newItem.save();
-    res.status(201).send(newItem);
-  } catch (err) {
-    res.status(400).send({ message: "error" });
-  }
-});
 
 // get an item from the database
 router.get("/items:id", async (req, res) => {
@@ -25,14 +11,28 @@ router.get("/items:id", async (req, res) => {
     if (!item) {
       res.status(404).send({ error: "Item not found" });
     }
-    res.status(200).send(item);
+    res.status(200).json(item);
   } catch (err) {
     res.status(400).send(err);
   }
 });
 
+// create new Item
+router.post("/items", Auth, async (req, res) => {
+  try {
+    const newItem = new Item({
+      ...req.body,
+      owner: req.user._id,
+    });
+    await newItem.save();
+    res.status(201).json(newItem);
+  } catch (err) {
+    res.status(400).send({ message: "error" });
+  }
+});
+
 // fetch all items will be used for the home page
-router.get("/items", async (req, res) => {
+router.get("/items", Auth, async (req, res) => {
   try {
     const items = await Item.find({});
     res.status(200).send(items);
@@ -42,8 +42,8 @@ router.get("/items", async (req, res) => {
 });
 
 // allow product owners to be able to edit their product
-router.patch("/items/:id", async (req, res) => {
-  const updateData = Object.Keys(req.body);
+router.patch("/items/:id", Auth, async (req, res) => {
+  const updateData = Object.keys(req.body);
   const allowedUpdates = ["name", "description", "category", "price"];
   const isValidOperation = updateData.every((data) =>
     allowedUpdates.includes(data)
@@ -65,7 +65,7 @@ router.patch("/items/:id", async (req, res) => {
 });
 
 // will be called for deleting Item by User
-router.delete("/items/:id", async (req, res) => {
+router.delete("/items/:id", Auth, async (req, res) => {
   try {
     const deletedItem = await Item.findOneAndDelete({ _id: req.params.id });
     if (!deletedItem) {

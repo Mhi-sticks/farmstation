@@ -1,15 +1,14 @@
 const express = require("express");
 const Order = require('../models/order');
 const Cart = require('../models/cart');
-// const User = require("../models/user");
-// const Auth = null;
+const Auth = require("../middleware/auth");
 const Flutterwave = require("flutterwave-node-v3");
 
 const router = new express.Router();
 const flw = new Flutterwave(process.env.FLW_PUB, process.env.FLW_SECRET);
 
 // get orders
-router.get('/orders', async (req, res) => {
+router.get('/orders', Auth, async (req, res) => {
     const owner = req.user._id;
     try {
         const order = await Order.find({ owner: owner }).sort({
@@ -22,7 +21,7 @@ router.get('/orders', async (req, res) => {
 });
 
 // cheecking out items
-router.post('../order/checkout', async(req, res) => {
+router.post('/order/checkout', Auth, async(req, res) => {
     try {
         const owner = req.user._id;
         let payload = req.body;
@@ -62,10 +61,13 @@ router.post('../order/checkout', async(req, res) => {
                 let url = response.meta.authorization.redirect;
                 open(url);
             }
+            res.send('Order Successfuly');
         } else {
             res.status(400).send('No Cart found');
         }
     } catch (err) {
-        res.status(400).send('invalid request')
+        res.status(400).send(`invalid request ${err.message}`);
     }
 });
+
+module.exports = router;
