@@ -44,7 +44,7 @@ router.post('/login', async (req, res) => {
     if (!passwordValid) throw new Error('Invalid password');
 
     const token = await user.generateAuthToken()
-    res.json({ user, token });
+    res.render('/profile', { user, token });
   } catch (error) {
     console.error(error);
     res.status(401).send('Invalid credentials');
