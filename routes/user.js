@@ -8,6 +8,7 @@ const Item = require('../models/item');
 const router = express.Router();
 
 router.get('/', async (req,res) => {
+
   // try {
   //   const items = await Item.find({});
   //   res.status(200).send(items);
@@ -53,6 +54,7 @@ router.post('/login', async (req, res) => {
 
 
 router.post('/logout', Auth, async (req, res) => {
+
   try {
     req.user.tokens = req.user.tokens.filter((token) => {
       return token.token !== req.token;
@@ -64,4 +66,6 @@ router.post('/logout', Auth, async (req, res) => {
   }
 });
 
+
 module.exports = router;
+

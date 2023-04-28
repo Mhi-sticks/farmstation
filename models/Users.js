@@ -7,7 +7,11 @@ const userSchema = new mongoose.Schema({
   // firstName: { type: String, required: true, trim: true },
   // surname: { type: String, required: true, trim: true },
   // otherNames: { type: String, required: false, trim: true },
+<<<<<<< HEAD
+  // username: { type: String, required: true, trim: true },
+=======
   username: { type: String, required: true, trim: true },
+>>>>>>> 93377eb41b5bff77ce56b0dad3bdd8cda1d5e317
   email: { type: String, required: true,
     validate(val) {
       if (!validator.isEmail(val)) throw new Error('Email is invalid');
@@ -43,12 +47,15 @@ userSchema.statics.findByCredentials = async (email, password) => {
   return user;
 }
 
+<<<<<<< HEAD
+=======
 userSchema.statics.confirmUserExists = async (email) => {
   const user = await User.findOne({ email });
   if (user) throw new Error('User aldready exists');
   return user;
 }
 
+>>>>>>> 93377eb41b5bff77ce56b0dad3bdd8cda1d5e317
 userSchema.pre('save', async function(next) {
   const user = this;
   if (user.isModified('password')) {

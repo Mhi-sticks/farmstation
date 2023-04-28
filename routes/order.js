@@ -61,7 +61,9 @@ router.post('/order/checkout', Auth, async(req, res) => {
                 let url = response.meta.authorization.redirect;
                 open(url);
             }
+
             res.send('Order Successfull');
+
         } else {
             res.status(400).send('No Cart found');
         }
