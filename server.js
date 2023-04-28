@@ -16,9 +16,6 @@ app.use(itemRouter);
 app.use(cartRouter);
 app.use(orderRoutes);
 
-
-
-
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);
 });
