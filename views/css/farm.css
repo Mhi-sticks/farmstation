@@ -710,7 +710,7 @@ figure {
 .signup-image {
     height: 100vh;
     width: 100%;
-    background-image: url(./images/farm9.jpg);
+    /* background-image: url(./images/farm9.jpg); */
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1106,7 +1106,8 @@ form {
     color: #13c4a1;
     text-decoration: underline;
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     display: none;
 }
 
@@ -1115,9 +1116,11 @@ form {
     color: #1F9F1F;
     cursor: pointer;
 }
-.itemcent{
+
+.itemcent {
     justify-content: center;
 }
+
 .input-icons button {
     width: 100%;
     position: relative;
@@ -1128,9 +1131,11 @@ form {
     cursor: pointer;
     color: white;
 }
+
 .input-icons button:hover {
     background-color: #1F9F1F;
 }
+
 .product {
     padding-top: 30px;
     color: #4d4d4d;
@@ -1608,7 +1613,7 @@ main {
     justify-content: space-between;
 }
 
- input {
+input {
     border: none;
     border-radius: 3px;
     outline: none;
@@ -1669,4 +1674,31 @@ main {
     background-color: #444;
     color: white;
     cursor: pointer;
+}
+
+/* profile */
+
+.logout {
+    position: relative;
+    left: 0;
+    top: 0;
+
+    display: block;
+    width: 100px;
+    height: auto;
+    border: solid 1px #1F9F1F;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #1F9F1F;
+}
+
+.logout:hover {
+    background-color: #1F9F1F;
+    color: #fff;
+
+}
+.right-cor {
+    position: absolute;
+    right: 100px;
+    padding-right: 10px;
 }

@@ -3,6 +3,7 @@ const itemRouter = require("./routes/item");
 const cartRouter = require("./routes/cart");
 const authRoutes = require("./routes/user");
 const orderRoutes = require("./routes/order");
+
 require("./db/mongoose");
 
 const app = express();
@@ -14,6 +15,9 @@ app.use(authRoutes);
 app.use(itemRouter);
 app.use(cartRouter);
 app.use(orderRoutes);
+
+
+
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);

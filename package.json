@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "bcrypt": "*",
+    "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
     "flutterwave-node-v3": "^1.1.5",
     "jsonwebtoken": "^8.5.1",

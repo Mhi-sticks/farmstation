@@ -4,17 +4,17 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
-  firstName: { type: String, required: true, trim: true },
-  surname: { type: String, required: true, trim: true },
-  otherNames: { type: String, required: false, trim: true },
-  username: { type: String, required: true, trim: true },
+  // firstName: { type: String, required: true, trim: true },
+  // surname: { type: String, required: true, trim: true },
+  // otherNames: { type: String, required: false, trim: true },
+  // username: { type: String, required: true, trim: true },
   email: { type: String, required: true,
     validate(val) {
       if (!validator.isEmail(val)) throw new Error('Email is invalid');
     }
   },
   password: { type: String, required: true, minLength: 7, trim: true },
-  phoneNumber: { type: String, required: true },
+  // phoneNumber: { type: String, required: true },
   tokens: [{
     token: {
       type: String,
