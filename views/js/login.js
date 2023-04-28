@@ -20,8 +20,12 @@ const loginButton = form.querySelector(".login-btn"); // select the submit butto
 loginButton.addEventListener("click", (e) => {
   e.preventDefault(); // prevent the default form submission behavior
 
+<<<<<<< HEAD
   const username = form.elements.username.value;
 >>>>>>> 93377eb41b5bff77ce56b0dad3bdd8cda1d5e317
+=======
+  const email = form.elements.username.value;
+>>>>>>> 1f637ab76b31638531441f5fc00a585c8652633f
   const password = form.elements.password.value; // get the value of the password input field
 
   fetch("/login", {
@@ -42,21 +46,24 @@ loginButton.addEventListener("click", (e) => {
       window.location.href = `/profile?username=${data.user.username}`;
 =======
     body: JSON.stringify({
-      username: username,
+      email: email,
       password: password,
     }),
-  })
-    .then((response, err) => {
-      if (response.ok) {
+  }).then(resp => resp.json())
+    .then((result) => {
+      if ((result.message = "SUCCESS")) {
         // User authentication successful
-        window.location.href = "/product.html";
+        window.location.href = "/index.html";
       } else {
         // User authentication failed
-        alert(err.message);
+        console.log(result)
       }
+<<<<<<< HEAD
 >>>>>>> 93377eb41b5bff77ce56b0dad3bdd8cda1d5e317
     })
     .catch((error) => {
       console.error(error);
+=======
+>>>>>>> 1f637ab76b31638531441f5fc00a585c8652633f
     });
 });

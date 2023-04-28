@@ -1,7 +1,7 @@
 # Farmstation
 
 # Description of the Project:
-A farm website that authenticate users and also allows then to order for products to be added to cart for checkout and payment.
+A farm website that authenticate users and also allows them to order for products to be added to cart for checkout and payment.
 
 
 # Project Objective
